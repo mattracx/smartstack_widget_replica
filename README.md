@@ -6,7 +6,7 @@ Despite it has already been few months since Apple implemented it on iOS, I was 
 
 So I decided to create my own widget/component and today, this might change your life, (or day 😆).
 
-##### If you would like to support me  🍺🍕
+##### Support my work  🍺🍕
 
 [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/MattRaciti?country.x=IT&locale.x=en_US)![Zelle](https://img.shields.io/badge/Zelle-6c1cd3?style=for-the-badge&logo=zelle&logoColor=white)![Stripe](https://img.shields.io/badge/Stripe-5C2D91?style=for-the-badge&logo=stripe&logoColor=white)![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)
 
