@@ -33,6 +33,7 @@ class _SmartStackState extends State<SmartStack> {
 
   double _currentPage = 0;
   Timer? _timer;
+  final bool _isScrolling = false;
 
   @override
   void initState() {
@@ -42,8 +43,14 @@ class _SmartStackState extends State<SmartStack> {
       setState(() {
         _currentPage = _controller.page!;
       });
+      _restartTimer(); // Restart the timer when manual scrolling occurs
     });
 
+    _startTimer();
+  }
+
+  void _restartTimer() {
+    _timer?.cancel();
     _startTimer();
   }
 
@@ -55,16 +62,38 @@ class _SmartStackState extends State<SmartStack> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 7), (timer) {
-      if (_currentPage < widget.data.length - 1) {
-        _controller.nextPage(
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.ease,
-        );
-      } else {
-        _controller.jumpToPage(0);
+    _timer = Timer.periodic(const Duration(seconds: 7), (_) {
+      if (!_isScrolling) {
+        _nextPage();
       }
     });
+  }
+
+  // void _onScroll() {
+  //   setState(() {
+  //     _isScrolling = true;
+  //   });
+  //   _timer?.cancel();
+  //   // Restart the timer after a brief delay
+  //   _timer = Timer(const Duration(milliseconds: 500), () {
+  //     setState(() {
+  //       _isScrolling = false;
+  //     });
+  //     _startTimer();
+  //   });
+  // }
+
+  void _nextPage() {
+    final nextPage = (_controller.page ?? 0) + 1;
+    if (nextPage < widget.data.length) {
+      _controller.animateToPage(
+        nextPage.toInt(),
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.ease,
+      );
+    } else {
+      _controller.jumpToPage(0);
+    }
   }
 
   @override
