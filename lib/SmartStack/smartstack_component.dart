@@ -69,20 +69,6 @@ class _SmartStackState extends State<SmartStack> {
     });
   }
 
-  // void _onScroll() {
-  //   setState(() {
-  //     _isScrolling = true;
-  //   });
-  //   _timer?.cancel();
-  //   // Restart the timer after a brief delay
-  //   _timer = Timer(const Duration(milliseconds: 500), () {
-  //     setState(() {
-  //       _isScrolling = false;
-  //     });
-  //     _startTimer();
-  //   });
-  // }
-
   void _nextPage() {
     final nextPage = (_controller.page ?? 0) + 1;
     if (nextPage < widget.data.length) {
