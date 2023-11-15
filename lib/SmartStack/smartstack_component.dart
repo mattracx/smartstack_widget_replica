@@ -33,7 +33,7 @@ class _SmartStackState extends State<SmartStack> {
 
   double _currentPage = 0;
   Timer? _timer;
-  final bool _isScrolling = false;
+  bool _isScrolling = false;
 
   @override
   void initState() {
@@ -64,22 +64,14 @@ class _SmartStackState extends State<SmartStack> {
   void _startTimer() {
     _timer = Timer.periodic(const Duration(seconds: 7), (_) {
       if (!_isScrolling) {
-        _nextPage();
+        final nextPage = (_controller.page ?? 0) + 1;
+        _controller.animateToPage(
+          nextPage.toInt(),
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.ease,
+        );
       }
     });
-  }
-
-  void _nextPage() {
-    final nextPage = (_controller.page ?? 0) + 1;
-    if (nextPage < widget.data.length) {
-      _controller.animateToPage(
-        nextPage.toInt(),
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.ease,
-      );
-    } else {
-      _controller.jumpToPage(0);
-    }
   }
 
   @override
@@ -98,8 +90,23 @@ class _SmartStackState extends State<SmartStack> {
                 Column(
                   children: [
                     GestureDetector(
+                      behavior: HitTestBehavior.opaque,
+                      onVerticalDragStart: (_) {
+                        _isScrolling = true; // User starts manual scroll
+                        _timer?.cancel(); // Cancel timer during manual scroll
+                        print("dragstart");
+                      },
+                      onVerticalDragUpdate: (details) {
+                        _controller
+                            .jumpTo(_controller.offset - details.delta.dy);
+                      },
+                      onVerticalDragEnd: (_) {
+                        _isScrolling = false; // User ends manual scroll
+                        _restartTimer(); // Restart the timer after manual scroll ends
+                        print("dragend");
+                      },
                       onTap: () {
-                        // Add any action needed when tapping the overlay
+                        print("tap");
                       },
                       child: Stack(
                         alignment: Alignment.center,

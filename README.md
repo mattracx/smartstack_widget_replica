@@ -28,4 +28,44 @@ The component is indeed in a very primordial state, there is room for improvemen
 
 It also scrolls automatically every 7 seconds, but that can be changed too.
 
-Scroll and fade animations are still a bit snappy, but I will try to improve it overtime. Eventually, turning it into a customizable and user-friendly component.
+Scroll and fade animations are still a bit snappy, but I will try to improve it overtime.
+
+# Update 1:
+
+The widgets have now been packed into a single user-friendly and reusable component.
+
+#### Usage Example:
+
+
+```dart
+static const List<String> _data = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+    // Add more items as needed
+  ];
+```
+
+```dart
+SmartStack(
+        cardWidth: 390,
+        cardHeight: 190,
+        cardColor: Colors.red,
+        indicatorColor: Colors.red,
+        overlayColor: const Color(0x33000000),
+        borderRadius: 20.0,
+        data: _data,
+        itemBuilder: (int index) {
+          return Center(
+            child: Text(
+              _data[index],
+              style: const TextStyle(fontSize: 24.0),
+            ),
+          );
+        },
+      )
+```
+
+![1700090472786](image/README/1700090472786.png)
