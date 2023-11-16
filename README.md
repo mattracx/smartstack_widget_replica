@@ -12,7 +12,10 @@ So I decided to create my own widget/component and today, this might change your
 
 ##### Support my work  🍺🍕
 
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/MattRaciti?country.x=IT&locale.x=en_US)![Zelle](https://img.shields.io/badge/Zelle-6c1cd3?style=for-the-badge&logo=zelle&logoColor=white)![Stripe](https://img.shields.io/badge/Stripe-5C2D91?style=for-the-badge&logo=stripe&logoColor=white)![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/MattRaciti?country.x=IT&locale.x=en_US)
+[![Patreon](https://img.shields.io/badge/Patreon-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://patreon.com/mattracx)
+[![Stripe](https://img.shields.io/badge/Stripe-5C2D91?style=for-the-badge&logo=stripe&logoColor=white)](https://donate.stripe.com/4gw29Nb3c7SV1CU144)
+[![Zelle](https://img.shields.io/badge/Zelle-6c1cd3?style=for-the-badge&logo=zelle&logoColor=white)](https://github.com/mattracx/mattracx/assets/1215814/471ab59d-e954-4526-974b-e72ad623d7dc)
 
 ## Getting Started
 
