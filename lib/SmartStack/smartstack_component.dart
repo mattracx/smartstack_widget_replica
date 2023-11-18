@@ -87,6 +87,7 @@ class _SmartStackState extends State<SmartStack> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // Left padding column
                 const Column(children: [
                   SizedBox(
                     width: 16,
@@ -177,6 +178,7 @@ class _SmartStackState extends State<SmartStack> {
                     ),
                   ],
                 ),
+                // Right padding column
                 AnimatedOpacity(
                   opacity: _currentPage.floor() != _currentPage ? 1 : 0,
                   duration: const Duration(milliseconds: 400),
