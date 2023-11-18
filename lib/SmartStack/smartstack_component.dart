@@ -81,12 +81,17 @@ class _SmartStackState extends State<SmartStack> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            width: widget.cardWidth + 30,
-            height: widget.cardHeight + 5,
+            width: widget.cardWidth + 36,
+            height: widget.cardHeight + 4,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                const Column(children: [
+                  SizedBox(
+                    width: 16,
+                  )
+                ]),
                 Column(
                   children: [
                     GestureDetector(
@@ -120,8 +125,8 @@ class _SmartStackState extends State<SmartStack> {
                                   BorderRadius.circular(widget.borderRadius),
                               child: Container(
                                 color: widget.overlayColor,
-                                width: widget.cardWidth + 5,
-                                height: widget.cardHeight + 5,
+                                width: widget.cardWidth + 4,
+                                height: widget.cardHeight + 4,
                               ),
                             ),
                           ),
@@ -180,7 +185,7 @@ class _SmartStackState extends State<SmartStack> {
                     children: [
                       for (int i = 0; i < widget.data.length; i++)
                         Padding(
-                          padding: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(4.0),
                           child: Container(
                             width: 8.0,
                             height: 8.0,
